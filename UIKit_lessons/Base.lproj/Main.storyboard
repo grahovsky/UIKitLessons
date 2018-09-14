@@ -37,14 +37,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="FeR-cK-0R3">
+                                <rect key="frame" x="63" y="234" width="249" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="Cbb-zy-TGf"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="sliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="NtA-IL-L6Q"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="FeR-cK-0R3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="65" id="5ZR-bF-SgC"/>
                             <constraint firstItem="6kH-E1-LRX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="52" id="8k4-Pv-50s"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UFx-T2-9jd" secondAttribute="trailing" constant="52" id="9xE-6M-TGa"/>
                             <constraint firstItem="UFx-T2-9jd" firstAttribute="top" secondItem="6kH-E1-LRX" secondAttribute="bottom" constant="83" id="NaR-Rz-dSl"/>
                             <constraint firstItem="UFx-T2-9jd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="52" id="Qzz-Pf-8BF"/>
+                            <constraint firstItem="FeR-cK-0R3" firstAttribute="top" secondItem="UFx-T2-9jd" secondAttribute="bottom" constant="51" id="hvg-QO-ONs"/>
                             <constraint firstItem="6kH-E1-LRX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="l3q-08-jJ6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FeR-cK-0R3" secondAttribute="trailing" constant="65" id="mkw-Ik-gEv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6kH-E1-LRX" secondAttribute="trailing" constant="52" id="nzz-x5-7Hl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -52,6 +64,7 @@
                     <connections>
                         <outlet property="label" destination="UFx-T2-9jd" id="ASH-zl-Eha"/>
                         <outlet property="segmentedContol" destination="6kH-E1-LRX" id="yEX-rQ-P2q"/>
+                        <outlet property="slider" destination="FeR-cK-0R3" id="wIB-8A-kMO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
