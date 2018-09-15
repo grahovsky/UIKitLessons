@@ -9,16 +9,15 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var segmentedContol: UISegmentedControl!
-    
     @IBOutlet weak var label: UILabel!
-    
     @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var textField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
         slider.minimumValue = 0
         slider.maximumValue = 100
         slider.value = 50;
@@ -37,12 +36,12 @@ class ViewController: UIViewController {
         slider.thumbTintColor = .black
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     @IBAction func choiceSegment(_ sender: Any) {
         
         label.isHidden = false
@@ -61,7 +60,6 @@ class ViewController: UIViewController {
             print("Sothing wrong")
         }
         
-        
     }
     
     @IBAction func sliderAction(_ sender: UISlider) {
@@ -71,6 +69,32 @@ class ViewController: UIViewController {
         self.view.backgroundColor = backgroundColor?.withAlphaComponent(CGFloat(sender.value/100))
     }
     
+    @IBAction func donePressed(_ sender: UIButton) {
+        
+        guard !textField.text!.isEmpty else { return }
+        
+        var check = true
+        
+        let testText = String(textField.text!)
+        let regExp = try? NSRegularExpression(pattern: "\\d")
+        let matches = regExp?.matches(in: testText, range: NSRange(testText.startIndex..., in: testText))
+        for _ in matches!{
+            check = false
+        }
+        
+        if !check {
+            let alert = UIAlertController(title: "Wrong format", message: "Please enter your name", preferredStyle: .alert)
+//            let okAction = UIAlertAction(title: "OK", style: .default, handler: {action in self.textField.text = nil})
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            
+            alert.addAction(okAction)
+            present(alert, animated: true, completion: nil)
+            
+        } else {
+            label.text = textField.text
+            textField.text = nil
+        }
+    }
     
 }
 

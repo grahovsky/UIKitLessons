@@ -18,8 +18,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFx-T2-9jd">
+                                <rect key="frame" x="52" y="162" width="271" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="FeR-cK-0R3">
+                                <rect key="frame" x="56" y="226" width="262" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="Cbb-zy-TGf"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="sliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="NtA-IL-L6Q"/>
+                                </connections>
+                            </slider>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter text" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="NaJ-pA-l7j">
+                                <rect key="frame" x="58" y="318" width="258" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="258" id="HJ8-en-Y8Z"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRt-qP-17K">
+                                <rect key="frame" x="169" y="387" width="37" height="30"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="donePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Acg-Gi-5XU"/>
+                                </connections>
+                            </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6kH-E1-LRX">
-                                <rect key="frame" x="52" y="52" width="271" height="28"/>
+                                <rect key="frame" x="52" y="50" width="271" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27" id="gR9-tR-8WD"/>
                                 </constraints>
@@ -31,33 +62,24 @@
                                     <action selector="choiceSegment:" destination="BYZ-38-t0r" eventType="valueChanged" id="HwW-G7-X60"/>
                                 </connections>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFx-T2-9jd">
-                                <rect key="frame" x="52" y="162" width="271" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="FeR-cK-0R3">
-                                <rect key="frame" x="63" y="234" width="249" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="29" id="Cbb-zy-TGf"/>
-                                </constraints>
-                                <connections>
-                                    <action selector="sliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="NtA-IL-L6Q"/>
-                                </connections>
-                            </slider>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="FeR-cK-0R3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="65" id="5ZR-bF-SgC"/>
+                            <constraint firstItem="FeR-cK-0R3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="58" id="5ZR-bF-SgC"/>
                             <constraint firstItem="6kH-E1-LRX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="52" id="8k4-Pv-50s"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UFx-T2-9jd" secondAttribute="trailing" constant="52" id="9xE-6M-TGa"/>
-                            <constraint firstItem="UFx-T2-9jd" firstAttribute="top" secondItem="6kH-E1-LRX" secondAttribute="bottom" constant="83" id="NaR-Rz-dSl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="NaJ-pA-l7j" secondAttribute="trailing" constant="59" id="LCB-wz-gZs"/>
+                            <constraint firstItem="NaJ-pA-l7j" firstAttribute="leading" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="65" id="M0d-yA-kAU"/>
+                            <constraint firstItem="UFx-T2-9jd" firstAttribute="top" secondItem="6kH-E1-LRX" secondAttribute="bottom" constant="85" id="NaR-Rz-dSl"/>
                             <constraint firstItem="UFx-T2-9jd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="52" id="Qzz-Pf-8BF"/>
-                            <constraint firstItem="FeR-cK-0R3" firstAttribute="top" secondItem="UFx-T2-9jd" secondAttribute="bottom" constant="51" id="hvg-QO-ONs"/>
-                            <constraint firstItem="6kH-E1-LRX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="l3q-08-jJ6"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FeR-cK-0R3" secondAttribute="trailing" constant="65" id="mkw-Ik-gEv"/>
+                            <constraint firstItem="NaJ-pA-l7j" firstAttribute="top" secondItem="FeR-cK-0R3" secondAttribute="bottom" constant="63" id="SNR-uH-CUB"/>
+                            <constraint firstItem="FeR-cK-0R3" firstAttribute="top" secondItem="UFx-T2-9jd" secondAttribute="bottom" constant="43" id="hvg-QO-ONs"/>
+                            <constraint firstItem="6kH-E1-LRX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="l3q-08-jJ6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FeR-cK-0R3" secondAttribute="trailing" constant="59" id="mkw-Ik-gEv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6kH-E1-LRX" secondAttribute="trailing" constant="52" id="nzz-x5-7Hl"/>
+                            <constraint firstItem="NaJ-pA-l7j" firstAttribute="centerX" secondItem="GRt-qP-17K" secondAttribute="centerX" id="rS3-mu-X6B"/>
+                            <constraint firstItem="GRt-qP-17K" firstAttribute="top" secondItem="NaJ-pA-l7j" secondAttribute="bottom" constant="39" id="wzg-QF-gaK"/>
+                            <constraint firstItem="NaJ-pA-l7j" firstAttribute="leading" secondItem="FeR-cK-0R3" secondAttribute="leading" id="xU3-6p-GLW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -65,6 +87,7 @@
                         <outlet property="label" destination="UFx-T2-9jd" id="ASH-zl-Eha"/>
                         <outlet property="segmentedContol" destination="6kH-E1-LRX" id="yEX-rQ-P2q"/>
                         <outlet property="slider" destination="FeR-cK-0R3" id="wIB-8A-kMO"/>
+                        <outlet property="textField" destination="NaJ-pA-l7j" id="tlB-dK-hV7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
