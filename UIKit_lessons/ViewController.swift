@@ -14,13 +14,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var datePicker: UIDatePicker!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         slider.minimumValue = 0
         slider.maximumValue = 100
-        slider.value = 50;
+        slider.value = 90;
         sliderAction(slider)
         
         label.text = String(slider.value)
@@ -29,11 +30,13 @@ class ViewController: UIViewController {
         label.textAlignment = .center
         label.numberOfLines = 2
         
-        segmentedContol.insertSegment(withTitle: "Third", at: 2, animated: true)
+        //segmentedContol.insertSegment(withTitle: "Third", at: 2, animated: true)
         
         slider.minimumTrackTintColor = .white
         slider.maximumTrackTintColor = .black
         slider.thumbTintColor = .black
+        
+        datePicker.locale = Locale(identifier: "ru_RU")
         
     }
     
@@ -94,6 +97,15 @@ class ViewController: UIViewController {
             label.text = textField.text
             textField.text = nil
         }
+    }
+    
+    @IBAction func changeDate(_ sender: UIDatePicker){
+        
+        let dateFormater = DateFormatter()
+        dateFormater.dateStyle = .full
+        dateFormater.locale = Locale(identifier: "ru_RU")
+        
+        label.text = dateFormater.string(from: sender.date)
     }
     
 }
