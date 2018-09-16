@@ -14,7 +14,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var switchLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,6 +108,24 @@ class ViewController: UIViewController {
         dateFormater.locale = Locale(identifier: "ru_RU")
         
         label.text = dateFormater.string(from: sender.date)
+    }
+    
+    @IBAction func switchAction(_ sender: UISwitch) {
+        
+        segmentedContol.isHidden = !segmentedContol.isHidden
+        label.isHidden = !label.isHidden
+        slider.isHidden = !slider.isHidden
+        textField.isHidden = !textField.isHidden
+        doneButton.isHidden = !doneButton.isHidden
+        datePicker.isHidden = !datePicker.isHidden
+        
+        if sender.isOn {
+            switchLabel.text = "отобразить все элементы"
+        } else {
+            switchLabel.text = "скрыть все элементы"
+        }
+        
+        
     }
     
 }
