@@ -14,13 +14,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var stepper: UIStepper!
+    @IBOutlet weak var actitvityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //textView.text = nil
-        
         textView.delegate = self
+        //textView.text = nil
+        textView.isHidden = true
+        textView.alpha = 0
         
         textView.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 17)
         textView.backgroundColor = self.view.backgroundColor
@@ -33,11 +35,24 @@ class ViewController: UIViewController {
         stepper.backgroundColor = .gray
         stepper.layer.cornerRadius = 5
         
+        actitvityIndicator.hidesWhenStopped = true
+        actitvityIndicator.color = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)
+        actitvityIndicator.startAnimating()
+        UIApplication.shared.beginIgnoringInteractionEvents()
+        
         // Отслеживаем появление клавиатуры
         NotificationCenter.default.addObserver(self, selector: #selector(updateTextView(notification:)), name: Notification.Name.UIKeyboardWillChangeFrame, object: nil)
         
         // Отслеживаем скрытие клавиатуры
         NotificationCenter.default.addObserver(self, selector: #selector(updateTextView(notification:)), name: Notification.Name.UIKeyboardWillHide, object: nil)
+        
+        UIView.animate(withDuration: 0, delay: 5, options: .curveEaseIn, animations: {
+            self.textView.alpha = 1
+        }) { (finished) in
+            self.actitvityIndicator.stopAnimating()
+            self.textView.isHidden = false
+            UIApplication.shared.endIgnoringInteractionEvents()
+        }
     }
 
     // Скрытие клавиатуры по тапу за пределами Text View
