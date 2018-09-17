@@ -16,13 +16,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var stepper: UIStepper!
     @IBOutlet weak var actitvityIndicator: UIActivityIndicatorView!
     
+    @IBOutlet weak var proressView: UIProgressView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         textView.delegate = self
         //textView.text = nil
         textView.isHidden = true
-        textView.alpha = 0
+        //textView.alpha = 0
         
         textView.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 17)
         textView.backgroundColor = self.view.backgroundColor
@@ -39,6 +40,8 @@ class ViewController: UIViewController {
         actitvityIndicator.color = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)
         actitvityIndicator.startAnimating()
         UIApplication.shared.beginIgnoringInteractionEvents()
+
+        proressView.setProgress(0, animated: true)
         
         // Отслеживаем появление клавиатуры
         NotificationCenter.default.addObserver(self, selector: #selector(updateTextView(notification:)), name: Notification.Name.UIKeyboardWillChangeFrame, object: nil)
@@ -46,12 +49,25 @@ class ViewController: UIViewController {
         // Отслеживаем скрытие клавиатуры
         NotificationCenter.default.addObserver(self, selector: #selector(updateTextView(notification:)), name: Notification.Name.UIKeyboardWillHide, object: nil)
         
+        /*
         UIView.animate(withDuration: 0, delay: 5, options: .curveEaseIn, animations: {
             self.textView.alpha = 1
         }) { (finished) in
             self.actitvityIndicator.stopAnimating()
             self.textView.isHidden = false
             UIApplication.shared.endIgnoringInteractionEvents()
+        }
+        */
+        
+        Timer.scheduledTimer(withTimeInterval: 0.005, repeats: true) { _ in
+            if self.proressView.progress != 1 {
+                self.proressView.progress += 0.001
+            } else {
+                self.actitvityIndicator.stopAnimating()
+                self.textView.isHidden = false
+                UIApplication.shared.endIgnoringInteractionEvents()
+                self.proressView.isHidden = true
+            }
         }
     }
 

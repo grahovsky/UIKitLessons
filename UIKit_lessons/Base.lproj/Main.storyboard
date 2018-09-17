@@ -50,13 +50,18 @@ The appearance of the keyboard itself can be customized using the properties pro
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="RD4-1j-Pws">
                                 <rect key="frame" x="177" y="284" width="20" height="20"/>
                             </activityIndicatorView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qpw-Zn-zab">
+                                <rect key="frame" x="16" y="60" width="343" height="2"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" red="0.46786360329958521" green="0.93543781725888331" blue="0.60515620179895502" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vkj-3s-eNF" secondAttribute="bottom" constant="138" id="00Q-DZ-zCG"/>
+                            <constraint firstItem="qpw-Zn-zab" firstAttribute="top" secondItem="vkj-3s-eNF" secondAttribute="top" id="42O-s5-xcc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nht-qw-DrC" secondAttribute="trailing" constant="317" id="6CD-1V-fiw"/>
                             <constraint firstItem="vkj-3s-eNF" firstAttribute="top" secondItem="nht-qw-DrC" secondAttribute="bottom" constant="8" id="89M-N4-2wa"/>
                             <constraint firstItem="vkj-3s-eNF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="9n0-ff-sGw"/>
+                            <constraint firstItem="qpw-Zn-zab" firstAttribute="centerX" secondItem="vkj-3s-eNF" secondAttribute="centerX" id="9rI-wU-PO1"/>
                             <constraint firstItem="RD4-1j-Pws" firstAttribute="centerX" secondItem="vkj-3s-eNF" secondAttribute="centerX" id="Aix-gB-ic0"/>
                             <constraint firstItem="vkj-3s-eNF" firstAttribute="top" secondItem="nht-qw-DrC" secondAttribute="bottom" constant="8" id="F3f-Wv-2oH"/>
                             <constraint firstItem="nht-qw-DrC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="QAz-sK-bvY"/>
@@ -65,6 +70,7 @@ The appearance of the keyboard itself can be customized using the properties pro
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pUK-uK-ZkP" secondAttribute="trailing" constant="16" id="ckY-dP-BHj"/>
                             <constraint firstItem="RD4-1j-Pws" firstAttribute="centerY" secondItem="vkj-3s-eNF" secondAttribute="centerY" id="eIz-zb-lrp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vkj-3s-eNF" secondAttribute="trailing" constant="16" id="jkf-PI-siI"/>
+                            <constraint firstItem="qpw-Zn-zab" firstAttribute="width" secondItem="vkj-3s-eNF" secondAttribute="width" id="tHT-PY-wNa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -72,6 +78,7 @@ The appearance of the keyboard itself can be customized using the properties pro
                         <outlet property="actitvityIndicator" destination="RD4-1j-Pws" id="Tox-sG-xZe"/>
                         <outlet property="bottomConstraint" destination="00Q-DZ-zCG" id="GNx-nM-TIM"/>
                         <outlet property="countLabel" destination="nht-qw-DrC" id="YzS-wS-8Dy"/>
+                        <outlet property="proressView" destination="qpw-Zn-zab" id="uoN-OR-liQ"/>
                         <outlet property="stepper" destination="pUK-uK-ZkP" id="fAC-kQ-FNg"/>
                         <outlet property="textView" destination="vkj-3s-eNF" id="Qyi-4d-Hkw"/>
                     </connections>
