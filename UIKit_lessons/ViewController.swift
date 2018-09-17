@@ -13,17 +13,25 @@ class ViewController: UIViewController {
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var stepper: UIStepper!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        textView.text = nil
+        //textView.text = nil
         
         textView.delegate = self
         
         textView.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 17)
         textView.backgroundColor = self.view.backgroundColor
         textView.layer.cornerRadius = 10
+        
+        stepper.value = 17
+        stepper.minimumValue = 10
+        stepper.maximumValue = 25
+        stepper.tintColor = .white
+        stepper.backgroundColor = .gray
+        stepper.layer.cornerRadius = 5
         
         // Отслеживаем появление клавиатуры
         NotificationCenter.default.addObserver(self, selector: #selector(updateTextView(notification:)), name: Notification.Name.UIKeyboardWillChangeFrame, object: nil)
@@ -58,6 +66,14 @@ class ViewController: UIViewController {
         
     }
 
+    @IBAction func sizeFont(_ sender: UIStepper) {
+        let fontName = textView.font?.fontName
+        let fontSize = CGFloat(sender.value)
+        
+        textView.font = UIFont(name: fontName!, size: fontSize)
+        
+    }
+    
 }
 
 extension ViewController: UITextViewDelegate {
@@ -74,7 +90,8 @@ extension ViewController: UITextViewDelegate {
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         countLabel.text = "\(textView.text.count)"
-        return textView.text.count + (text.count - range.length) <= 60
+        //return textView.text.count + (text.count - range.length) <= 60 // Ограничение длины
+        return true
     }
     
 }
