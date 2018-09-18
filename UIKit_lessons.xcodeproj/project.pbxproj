@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		B553692321484C6D00F0FCBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B553692221484C6D00F0FCBF /* AppDelegate.swift */; };
-		B553692521484C6D00F0FCBF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B553692421484C6D00F0FCBF /* ViewController.swift */; };
 		B553692821484C6D00F0FCBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B553692621484C6D00F0FCBF /* Main.storyboard */; };
 		B553692A21484C7200F0FCBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B553692921484C7200F0FCBF /* Assets.xcassets */; };
 		B553692D21484C7200F0FCBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B553692B21484C7200F0FCBF /* LaunchScreen.storyboard */; };
+		B5990E632150CC5F000DE1F3 /* PreviewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990E622150CC5F000DE1F3 /* PreviewPage.swift */; };
+		B5990E652150CD6C000DE1F3 /* ArtCoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990E642150CD6C000DE1F3 /* ArtCoverCell.swift */; };
+		B5990E672150D5AA000DE1F3 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5990E662150D5AA000DE1F3 /* DetailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B553691F21484C6D00F0FCBF /* UIKit_lessons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKit_lessons.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B553692221484C6D00F0FCBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B553692421484C6D00F0FCBF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B553692721484C6D00F0FCBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B553692921484C7200F0FCBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B553692C21484C7200F0FCBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B553692E21484C7200F0FCBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5990E622150CC5F000DE1F3 /* PreviewPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewPage.swift; sourceTree = "<group>"; };
+		B5990E642150CD6C000DE1F3 /* ArtCoverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtCoverCell.swift; sourceTree = "<group>"; };
+		B5990E662150D5AA000DE1F3 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +59,9 @@
 			isa = PBXGroup;
 			children = (
 				B553692221484C6D00F0FCBF /* AppDelegate.swift */,
-				B553692421484C6D00F0FCBF /* ViewController.swift */,
+				B5990E622150CC5F000DE1F3 /* PreviewPage.swift */,
+				B5990E642150CD6C000DE1F3 /* ArtCoverCell.swift */,
+				B5990E662150D5AA000DE1F3 /* DetailVC.swift */,
 				B553692621484C6D00F0FCBF /* Main.storyboard */,
 				B553692921484C7200F0FCBF /* Assets.xcassets */,
 				B553692B21484C7200F0FCBF /* LaunchScreen.storyboard */,
@@ -96,6 +102,7 @@
 				TargetAttributes = {
 					B553691E21484C6D00F0FCBF = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -135,8 +142,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B553692521484C6D00F0FCBF /* ViewController.swift in Sources */,
 				B553692321484C6D00F0FCBF /* AppDelegate.swift in Sources */,
+				B5990E672150D5AA000DE1F3 /* DetailVC.swift in Sources */,
+				B5990E652150CD6C000DE1F3 /* ArtCoverCell.swift in Sources */,
+				B5990E632150CC5F000DE1F3 /* PreviewPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +289,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = UIKit_lessons/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -288,7 +299,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Home.UIKit-lessons";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -297,7 +309,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = UIKit_lessons/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -305,7 +319,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Home.UIKit-lessons";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
