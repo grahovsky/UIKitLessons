@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    static var presentationWasViewed = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -26,11 +28,20 @@ class ViewController: UIViewController {
     }
     
     func startPresentation() {
-        if let pageViewController = storyboard?.instantiateViewController(
-            withIdentifier: "PageViewController") as? PageViewController {
+        
+        //let userDefaults = UserDefaults.standard
+        //let presetationWasViewed = userDefaults.bool(forKey: "presentationWasViewed")
+        
+        //if presetationWasViewed == false {
+        if !ViewController.presentationWasViewed {
             
-            present(pageViewController, animated: true, completion: nil)
-            
+            if let pageViewController = storyboard?.instantiateViewController(
+                withIdentifier: "PageViewController") as? PageViewController {
+                
+                
+                present(pageViewController, animated: true, completion: nil)
+                ViewController.presentationWasViewed = true
+            }
         }
     }
 

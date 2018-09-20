@@ -14,11 +14,10 @@ class PageViewController: UIPageViewController {
     "Первая глава. Как я установил икс код. Далее идет какой-то странный текст",
     "Вторая глава. Как я изучал икс код. Далее идет какой-то странный текст",
     "Третяя глава. Как я использовал икс код. Далее идет какой-то странный текст",
-    "Последняя глава. Как я разукрасил икс код. Далее идет какой-то странный текст",
-    ""
+    "Последняя глава. Как я разукрасил икс код. Далее идет какой-то странный текст"
     ]
     
-    let emojiArray = ["👿", "👤", "👲", "🧐", ""]
+    let emojiArray = ["👿", "👤", "👲", "🧐"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +34,9 @@ class PageViewController: UIPageViewController {
         
         guard index >= 0 else { return nil }
         guard index < presentScreenContent.count else {
-            dismiss(animated: true, completion: nil)
+            //let userDefaults = UserDefaults.standard
+            //userDefaults.set(true, forKey: "presentationWasViewed")
+            //dismiss(animated: true, completion: nil)
             return nil
         }
         //тут создаем экземпляр через поиск по Storyboard ID
@@ -48,6 +49,10 @@ class PageViewController: UIPageViewController {
         
         return contetViewController
         
+    }
+    
+    func closePresentation() -> Void {
+        dismiss(animated: true, completion: nil)
     }
     
 }
@@ -68,6 +73,5 @@ extension PageViewController: UIPageViewControllerDataSource {
         
         return showViewControllerAtIndex(pageNumber)
     }
-    
     
 }

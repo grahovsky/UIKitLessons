@@ -13,6 +13,7 @@ class ContentViewController: UIViewController {
     @IBOutlet weak var presentTextLabel: UILabel!
     @IBOutlet weak var emojiLabel: UILabel!
     @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var closeButton: UIButton!
     
     var presentText = ""
     var emoji = ""
@@ -22,6 +23,10 @@ class ContentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        closeButton.isHidden = numberOfPages != currentPage + 1
+        
+        
         presentTextLabel.text = presentText
         emojiLabel.text = emoji
         pageControl.numberOfPages = numberOfPages
@@ -30,6 +35,17 @@ class ContentViewController: UIViewController {
 
     }
 
-   
+    @IBAction func pressClose(_ sender: Any) {
+    
+        //if let pageViewController = storyboard?.instantiateViewController(
+            //withIdentifier: "PageViewController") as? PageViewController {
+            
+            //pageViewController.closePresentation()
+            dismiss(animated: true, completion: nil)
+            
+        }
+        
+    }
+    
 
 }

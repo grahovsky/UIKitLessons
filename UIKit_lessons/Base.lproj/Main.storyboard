@@ -70,6 +70,13 @@
                                 <color key="pageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="currentPageIndicatorTintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FAb-zn-7cT">
+                                <rect key="frame" x="165" y="540" width="39" height="30"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <action selector="pressClose:" destination="p2I-nz-DDM" eventType="touchUpInside" id="mmM-mC-395"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.46786360329999999" green="0.93543781729999997" blue="0.60515620179999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -77,13 +84,17 @@
                             <constraint firstItem="20c-6T-ItB" firstAttribute="leading" secondItem="5W8-BG-jNX" secondAttribute="leading" constant="16" id="8pa-dX-j6R"/>
                             <constraint firstItem="20c-6T-ItB" firstAttribute="top" secondItem="5W8-BG-jNX" secondAttribute="top" constant="99" id="FTL-vw-AWg"/>
                             <constraint firstItem="cSN-dW-zyr" firstAttribute="centerY" secondItem="5W8-BG-jNX" secondAttribute="centerY" id="INF-3Y-xhQ"/>
+                            <constraint firstItem="FAb-zn-7cT" firstAttribute="leading" secondItem="5W8-BG-jNX" secondAttribute="leading" constant="165" id="Wky-3G-7If"/>
+                            <constraint firstItem="5W8-BG-jNX" firstAttribute="trailing" secondItem="FAb-zn-7cT" secondAttribute="trailing" constant="171" id="XQb-bU-BvH"/>
                             <constraint firstItem="pU0-St-Y4Q" firstAttribute="centerX" secondItem="5W8-BG-jNX" secondAttribute="centerX" id="YLF-aX-hbK"/>
+                            <constraint firstItem="pU0-St-Y4Q" firstAttribute="top" secondItem="FAb-zn-7cT" secondAttribute="bottom" constant="40" id="r26-c1-O23"/>
                             <constraint firstItem="cSN-dW-zyr" firstAttribute="centerX" secondItem="5W8-BG-jNX" secondAttribute="centerX" id="spo-aB-IHl"/>
                             <constraint firstItem="5W8-BG-jNX" firstAttribute="bottom" secondItem="pU0-St-Y4Q" secondAttribute="bottom" constant="20" id="zX4-XT-Hp5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5W8-BG-jNX"/>
                     </view>
                     <connections>
+                        <outlet property="closeButton" destination="FAb-zn-7cT" id="xvu-lb-hJ2"/>
                         <outlet property="emojiLabel" destination="cSN-dW-zyr" id="SoQ-Zw-bAg"/>
                         <outlet property="pageControl" destination="pU0-St-Y4Q" id="voL-rX-H9z"/>
                         <outlet property="presentTextLabel" destination="20c-6T-ItB" id="zo4-2J-dUj"/>
